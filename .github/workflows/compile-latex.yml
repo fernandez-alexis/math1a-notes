@@ -1,5 +1,9 @@
-name: Build All LaTeX Notes
+name: Build All LaTeX Notes and Commit PDFs
 on: [push]
+
+# Grants the runner write permissions to commit changes back to the branch
+permissions:
+  contents: write
 
 jobs:
   build_all_pdfs:
@@ -13,10 +17,21 @@ jobs:
         with:
           root_file: "*.tex"
           glob_root_file: true
-          continue_on_error: true # Prevents one broken note from stopping the others
+          continue_on_error: true
 
-      - name: Upload all compiled note PDFs
-        uses: actions/upload-artifact@v4
-        with:
-          name: All-Individual-Notes
-          path: "*.pdf"
+      - name: Commit and Push compiled PDFs
+        run: |
+          # Configure Git using the automation runner profile
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@://github.com"
+          
+          # Stage all newly generated PDF files
+          git add *.pdf
+          
+          # Only commit and push if there are actual changes to save
+          if git diff --staged --quiet; then
+            echo "No changes in PDFs to commit."
+          else
+            git commit -m "Automated update: Compiled note PDFs [skip ci]"
+            git push
+          fi
