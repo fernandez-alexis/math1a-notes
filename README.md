@@ -6,7 +6,7 @@ Notes from the Math 1A, now Math 51, course at UC Berkeley where I was a uGSI fo
 Feel free to reach me regarding unreleased notes, worksheets, worksheet solutions, and proposed modifications at alexis.fernandez@berkeley.edu
 
 ## Table of Contents
-Note 1 - Functions & Domains [PDF](note1.pdf) / [LaTeX](note1.tex) \ 
+Note 1 - Functions & Domains [PDF](note1.pdf) / [LaTeX](note1.tex) \
 *Incomplete* Note 2 - Types of Functions PDF / [LaTeX](note2.tex) \ 
 *Incomplete* Note 3 - Transformations of Functions PDF / [LaTeX](note3.tex)
 
