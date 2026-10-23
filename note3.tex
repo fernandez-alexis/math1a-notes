@@ -1,0 +1,155 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage[margin=0.5in, tmargin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Math 1A Spring 2024 Notes}
+\fancyhead[R]{Alexis Fernandez}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=*}
+
+\usepackage{amsmath, amsfonts, amssymb}
+
+\author{}
+\date{}
+
+
+\begin{document}
+
+\section*{\centering Note 3 - Transformations of Functions}
+
+\subsection*{Transformations}
+
+\begin{itemize}
+    \item \textbf{Four Shifts}
+        \begin{multicols}{2}
+        \begin{itemize}[label=$\circ$]
+            \item Up by $c$ units: $f(x) + c$
+            \item Down by $c$ units: $f(x) - c$
+            \item Right by $c$ units: $f(x-c)$
+            \item Left by $c$ units: $f(x + c)$
+        \end{itemize}
+        \end{multicols}
+        
+    \item \textbf{Two Reflections}
+        \begin{multicols}{2}
+        \begin{itemize}[label=$\circ$]
+            \item Through $x$-axis: $-f(x)$
+            \item Through $y$-axis: $f(-x)$
+        \end{itemize}
+        \end{multicols}
+    
+    \item \textbf{Vertical Stretch/Shrink}
+        \begin{itemize}[label=$\circ$]
+            \item Stretch by a factor of $c$ units: $cf(x)$ where $c > 1$
+            \item Shrink by a factor of $c$ units: $cf(x)$ where $0 < c < 1$ \\
+            \textit{Recall: if $c < 0$, then it is a reflection combined with a stretch/shrink!}
+        \end{itemize}
+    
+    \item \textbf{Horizontal Stretch/Shrink}
+        \begin{itemize}[label=$\circ$]
+            \item Stretch by a factor of $c$ units: $f(cx)$ where $0 < c < 1$
+            \item Shrink by a factor of $c$ units: $f(cx)$ where $c > 1$ \\
+        \end{itemize}
+
+    \item \textbf{Mother Functions}: Base functions that are often transformed.
+        \begin{multicols}{2}
+        \begin{itemize}[label=$\circ$]
+            \item $y = |x|$
+            \item $y = \sqrt{x}$
+            \item $y=x^2$
+            \item $y=x^3$
+        \end{itemize}
+        \end{multicols}
+    
+    
+    \item \textbf{Order of Operations}: Given a Mother Function, perform transformations in this order:
+    \indent \begin{enumerate}
+        \item All stretches or shrinks
+        \item All reflections
+        \item All shifts
+    \end{enumerate}
+    
+
+\end{itemize}
+
+
+\newpage
+
+\subsection*{Composite Functions}
+
+\begin{itemize}
+    \item $f$ composed with $g$: $(f \circ g)(x) = f(g(x))$
+    \item $g$ composed with $f$: $(g \circ f)(x) = g(f(x))$
+    \item $f$ composed with $f$: $(f \circ f)(x) = f(f(x))$
+    \item $g$ composed with $g$: $(g \circ g)(x) = g(g(x))$
+\end{itemize}
+
+For composite functions, evaluate the inner function 
+\textbf{Method 1:} Fractional (Rational) Functions\\
+{\color{magenta}
+\textbf{Procedure:} Find values of $x$ that make the denominator 0.}
+\begin{itemize}
+    \item Set denominator equal to 0 and solve for $x$.
+    \item The domain is the set of all real numbers except the values of x found in previous step. \\
+    \textit{Recall: A denominator of 0 makes the function undefined.}
+\end{itemize}
+{\color{blue}
+\textbf{Example:}} $h(x) = \dfrac{3-x}{2x+1}$
+
+    \begin{align*}
+    2x+1 &= 0 \qquad \text{\color{magenta}{Set the denominator equal to 0.}}\\ 
+    2x &= -1 \qquad \text{\color{magenta}{Solve for x.}}\\ 
+    x &= -\frac{1}{2}
+    \end{align*}
+
+    Thus, the domain is everywhere $x \neq -\frac{1}{2}$, since plugging in $-\frac{1}{2}$ would lead to invalid outputs. \\
+    \indent In interval notation, this is written as $$(-\infty, -\frac{1}{2})\cup (-\frac{1}{2}, \infty)$$ 
+    \begin{quote} 
+    \textit{Note: The parentheses are used to show that the interval is not inclusive of $-\frac{1}{2}$ in the domain, but includes numbers greater than $-0.4\overline{999}$ and less than $-0.5000...1$. The $\cup$ represents the union of two subdomains.} \\
+    \end{quote} 
+
+\noindent \textbf{Method 2:} Even Root Functions \quad \textit{i.e. $\sqrt{x}, \sqrt[4]{x}, \sqrt[6]{x}$...}\\
+{\color{magenta}
+\textbf{Procedure:} Find values of $x$ that make the expression inside the root greater than or equal to 0.}
+\begin{itemize}
+    \item Set the expression inside the radical it greater than or equal to 0, then solve the polynomial inequality.
+    \item The solution to the inequality is the domain. \\
+    \textit{Recall: Negative numbers inside even roots lead to imaginary solutions.}
+\end{itemize}
+{\color{blue}
+\textbf{Example:}} $g(x) = \sqrt{x^2-x-6}$
+
+    \begin{align*}
+    x^2-x-6 &\geq 0 \qquad \text{\color{magenta}{Set the expression greater than or equal to 0.}}\\ 
+    (x-3)(x+2) &= 0 \qquad \text{\color{magenta}{Solve for $x$. \textit{Note: the inequality is temporarily changed to an equality.}}}\\ 
+    x &= 3, -2 \qquad \text{\color{magenta}{Thus, the inequality is equal to 0 when $x = 3$ or $-2$.}}
+    \end{align*}
+
+    \begin{quote} 
+     When $x = 3$ or $-2$, then we know that the inequality is equal to 0. However, we must also check whether the inequality is true for the intervals where $x < -2, -2 < x<3$, and $x > 3$. For each interval, plug in a test point for $x$ and see if the inequality holds true.
+    \end{quote}
+    \begin{itemize}
+        \item For $x < -2$: plugging in $x = -3$ gives $(-3)^2+ 3 -6 \geq 0$. When simplified, this gives $ 6 \geq 0$, which is true. Thus, real numbers less than or equal to -2 are in the domain.
+        \item For $-2 < x < 3$: plugging in $x = 0$ gives $(0)^2 - 0 -6 \geq 0$. When simplified, this gives $ -6 \geq 0$, which is false. Thus,  $x$-values between -2 and 3 are \textit{not} in the domain of this function.
+        \item For $x > 3$: plugging in $x = 4$ gives $(4)^2 - 4 -6 \geq 0$. When simplified, this gives $ 6 \geq 0$, which is true.
+    \end{itemize}
+    
+    In interval notation, this is written as $$(-\infty, -2]\cup[3, \infty)$$
+
+    \begin{quote} 
+    \textit{Note: The brackets are used to show that the interval is inclusive of $-2$ and $3$ in the domain.}
+    \end{quote}
+
+\end{document}
+
