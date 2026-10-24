@@ -15,8 +15,7 @@ jobs:
       - name: Compile all separate .tex notes
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: "*.tex"
-          glob_root_file: true
+          root_file: "notes/**/*.tex"
           continue_on_error: true
 
       - name: Commit and Push compiled PDFs
@@ -26,7 +25,7 @@ jobs:
           git config --global user.email "github-actions[bot]@://github.com"
           
           # Stage all newly generated PDF files
-          git add *.pdf
+          find notes -name "*.pdf" -exec git add {} +
           
           # Only commit and push if there are actual changes to save
           if git diff --staged --quiet; then

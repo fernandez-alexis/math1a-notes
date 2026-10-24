@@ -37,4 +37,5 @@ ax2.grid(True, alpha=0.3)
 ax2.axhline(0, color="black", linewidth=0.8)
 ax2.axvline(0, color="black", linewidth=0.8)
 
+plt.savefig("vlt.pdf", format="pdf", bbox_inches="tight")
 plt.show()
