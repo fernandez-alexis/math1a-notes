@@ -16,13 +16,14 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: "notes/**/*.tex"
+          work_in_root_file_dir: true
           continue_on_error: true
 
       - name: Commit and Push compiled PDFs
         run: |
           # Configure Git using the automation runner profile
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@://github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Stage all newly generated PDF files
           find notes -name "*.pdf" -exec git add {} +
