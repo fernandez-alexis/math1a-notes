@@ -1,35 +1,42 @@
-name: Build All LaTeX Notes and Commit PDFs
-on: [push]
 
-# Grants the runner write permissions to commit changes back to the branch
+name: Build All LaTeX Notes and Commit PDFs
+
+on: push
+
 permissions:
   contents: write
 
 jobs:
   build_all_pdfs:
     runs-on: ubuntu-latest
+
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
+      - name: Check LaTeX files
+        run: |
+          echo "Found LaTeX files:"
+          find notes -type f -name '*.tex'
+
       - name: Compile all separate .tex notes
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: "notes/**/*.tex"
+          root_file: |
+            notes/**/*.tex
           work_in_root_file_dir: true
           continue_on_error: true
 
-      - name: Commit and Push compiled PDFs
+      - name: Commit and push compiled PDFs
         run: |
-          # Configure Git using the automation runner profile
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Stage all newly generated PDF files
-          find notes -name "*.pdf" -exec git add {} +
-          
-          # Only commit and push if there are actual changes to save
-          if git diff --staged --quiet; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          find notes -type f -name '*.pdf' -print
+
+          find notes -type f -name '*.pdf' -exec git add -- {} +
+
+          if git diff --cached --quiet; then
             echo "No changes in PDFs to commit."
           else
             git commit -m "Automated update: Compiled note PDFs [skip ci]"
