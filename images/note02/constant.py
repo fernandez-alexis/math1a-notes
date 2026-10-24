@@ -2,15 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator
 
-#Linear Function
 fig, ax1 = plt.subplots(figsize=(2, 2))
 
 ax1.axhline(2, color="blue")
-
-# x1 = np.linspace(-3, 3, 100)
-# y1 = 2
-
-# ax1.plot(x1, y1, label="y = x + 2", color="black", linewidth=2)
 
 ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 ax1.yaxis.set_major_locator(MaxNLocator(integer=True))

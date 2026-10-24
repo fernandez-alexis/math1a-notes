@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+#Creates two side-by-side plots
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4))
 
+#Plot 1: Parabola - Function
 x1 = np.linspace(-3, 3, 100)
 y1 = x1**2
 
 ax1.plot(x1, y1, label="y = x^2 (Parabola)", color="blue", linewidth=2)
 
+#Vertical line
 test_x = 1.5
 ax1.axvline(
     x=test_x, color="red", linestyle="--", label=f"Vertical Line at x = {test_x}"
@@ -20,11 +23,13 @@ ax1.grid(True, alpha=0.3)
 ax1.axhline(0, color="black", linewidth=0.8)
 ax1.axvline(0, color="black", linewidth=0.8)
 
+#Plot 2: Sideways Parabola - Not a Function
 y2 = np.linspace(-3, 3, 100)
 x2 = y2**2
 
 ax2.plot(x2, y2, label="x = y^2 (Parabola)", color="blue", linewidth=2)
 
+#Vertical line
 test_x = 1.5
 ax2.axvline(
     x=test_x, color="red", linestyle="--", label=f"Vertical Line at x = {test_x}"
@@ -37,5 +42,6 @@ ax2.grid(True, alpha=0.3)
 ax2.axhline(0, color="black", linewidth=0.8)
 ax2.axvline(0, color="black", linewidth=0.8)
 
+#Save figure as pdf and show
 plt.savefig("images/note1/vlt.pdf", format="pdf", bbox_inches="tight")
 plt.show()
