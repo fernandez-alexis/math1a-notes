@@ -18,14 +18,12 @@ jobs:
         run: |
           echo "Found LaTeX files:"
           find notes -type f -name '*.tex'
-
-      - name: Compile all separate .tex notes
+      
+      - name: Compile note01
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: |
-            notes/**/*.tex
+          root_file: notes/note01/note01.tex
           work_in_root_file_dir: true
-          continue_on_error: true
 
       - name: Commit and push compiled PDFs
         run: |
