@@ -2,6 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator
 
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "serif",
+    "font.serif": ["Computer Modern Roman"],
+    "axes.labelsize": 11,     # Match your LaTeX font size (e.g., 10pt, 11pt, 12pt)
+    "font.size": 11,
+    "legend.fontsize": 9,
+    "xtick.labelsize": 9,
+    "ytick.labelsize": 9
+})
+
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(8, 2), sharex=True, sharey=True)
 
 #Example 1
