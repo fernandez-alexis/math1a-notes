@@ -26,6 +26,11 @@ Note 16 - Derivatives and the Shape of the Graph \
 Note 17 - Indeterminate Forms & L'Hospital's Rule \
 Note 18 - Newton's Method \
 Note 19 - Antiderivatives \
+Note 20 - Definite & Indefinite Integrals \
+Note 21 - The Fundamental Theorem of Calculus \
+Note 22 - The Substitution Rule & The Average Value of a Function \
+Note 23 - Areas Between Curves & Volumes \
+
 
 
 These notes are closely modeled after my AP Calculus notes from my high school teacher, Darrell Butler, with a few modifications from the James Stewart Calculus textbook.
