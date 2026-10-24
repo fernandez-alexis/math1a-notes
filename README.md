@@ -6,9 +6,10 @@ Notes from the Math 1A, now Math 51, course at UC Berkeley where I was a uGSI fo
 Feel free to reach me regarding unreleased notes, worksheets, worksheet solutions, and proposed modifications at alexis.fernandez@berkeley.edu
 
 ## Table of Contents
-Note 1 - Functions & Domains [PDF](notes/note1/note1.pdf) / [LaTeX](notes/note1/note1.tex) \
-*Incomplete* Note 2 - Types of Functions [PDF](notes/note2/note2.pdf) / [LaTeX](notes/note2/note2.tex) \
-*Incomplete* Note 3 - Transformations of Functions [PDF](notes/note3/note3.pdf) / [LaTeX](notes/note3/note3.tex) \
+Note 1 - Functions & Domains [PDF](notes/note01/note1.pdf) / [LaTeX](notes/note01/note01.tex) \
+*Incomplete* Note 2 - Types of Functions [PDF](notes/note02/note02.pdf) / [LaTeX](notes/note02/note02.tex) \
+*Incomplete* Note 3 - Transformations of Functions [PDF](notes/note03/note03.pdf) / [LaTeX](notes/note03/note03.tex) \
+*Incomplete* Note 16 - Derivatives and the Shape of the Graph [PDF](notes/note16/note16.pdf) / [LaTeX](notes/note16/note16.tex) \
 *Proposed Outline:* \
 Note 4 - Exponential, Inverse, & Logarithmic Functions \
 Note 5 - The Tangent & Velocity Problems \
