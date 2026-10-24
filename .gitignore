@@ -37,3 +37,8 @@ Desktop.ini
 *.lof
 *.lot
 *.xdv
+
+# Virtual environments
+.venv/
+venv/
+images/.venv/
