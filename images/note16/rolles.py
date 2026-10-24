@@ -2,11 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator
 
+#Font to match LaTeX
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
-    "axes.labelsize": 11,     # Match your LaTeX font size (e.g., 10pt, 11pt, 12pt)
+    "axes.labelsize": 11,     
     "font.size": 11,
     "legend.fontsize": 9,
     "xtick.labelsize": 9,
