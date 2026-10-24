@@ -22,4 +22,5 @@ ax1.grid(True, alpha=0.3)
 ax1.axhline(0, color="black", linewidth=0.8)
 ax1.axvline(0, color="black", linewidth=0.8)
 
+plt.savefig("images/note2/constant.pdf", format="pdf", bbox_inches="tight")
 plt.show()
