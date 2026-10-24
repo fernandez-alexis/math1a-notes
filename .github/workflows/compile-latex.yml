@@ -19,24 +19,23 @@ jobs:
           echo "Found LaTeX files:"
           find notes -type f -name '*.tex'
 
-      - name: Verify note01 exists
+      - name: Verify LaTeX files exist
         run: |
-          pwd
-          ls -la notes/note01/
-          test -f notes/note01/note01.tex
+          test -n "$(find notes -type f -name '*.tex' -print -quit)"
 
-      - name: Compile note01
+      - name: Compile all LaTeX notes
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: notes/note01/note01.tex
+          root_file: |
+            notes/**/*.tex
           work_in_root_file_dir: true
+          continue_on_error: true
 
       - name: Commit and push compiled PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          find notes -type f -name '*.pdf' -print
           find notes -type f -name '*.pdf' -exec git add -- {} +
 
           if git diff --cached --quiet; then
